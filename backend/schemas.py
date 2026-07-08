@@ -7,8 +7,9 @@ class UserCreate(BaseModel):
     role: str
 
 class UserLogin(BaseModel):
-    email: EmailStr
+    email: str
     password: str
+
 
 class SaleCreate(BaseModel):
     customer_id: int

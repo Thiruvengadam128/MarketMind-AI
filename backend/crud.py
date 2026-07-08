@@ -17,6 +17,7 @@ def create_user(db: Session, name: str, email: str, password: str, role: str):
 def get_user_by_email(db: Session, email: str):
     return db.query(User).filter(User.email == email).first()
 
+
 def create_sale(db: Session, sale):
     new_sale = Sale(
         customer_id=sale.customer_id,
@@ -32,6 +33,7 @@ def create_sale(db: Session, sale):
     db.refresh(new_sale)
 
     return new_sale
+
 
 def get_all_sales(db: Session):
     return db.query(Sale).all()
